@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-150 -30 1260 768">
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-150 -30 1260 768" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="0" y="0" width="1260" height="768" style="fill:black; stroke:none" />
 
 <g id="earth">
@@ -6,5 +7,51 @@
   <path id="Amerique" d="M930,-200 l-10,50 l-20,30 l-30,30 l-5,100 l50,60 l-10,20 l5,20 l10,10 l0,80 l20,5 l20,-10
     l80,-100 l-130,-40 l-30,-40 l10,-10 l20,-5 l5,10 l110,-60 l-20,-40 Z" style="fill:green"/>
 </g>
+
+<defs>
+<g id="star">
+  <circle cx="100" cy="100" r="2" style="fill:white;stroke:none">
+      <animate attributeName="r" values="2;4;2" begin="0s" dur="1s" repeatCount="indefinite" />
+  </circle>
+</g>
+<g id="guyhead">
+  <circle id = "head" cx="108" r="15" cy="280" style="fill:pink" />
+</g>
+
+<g id="guybody">
+  <ellipse id="body" cx="108" cy="325" rx="15" ry="30" style="fill:white" />
+</g>
+
+<g id="guylegs">
+     <polygon id="leftleg1" fill="rgb(255,255,255)" points="108,350 112,355 95,360 93,355" />
+</g>
+
+</defs>
+<!-- drawing stars -->
+<use xlink:href="#star" transform = "translate(200,300)"/>
+<use xlink:href="#star" transform = "translate(150,100)"/>
+<use xlink:href="#star" transform = "translate(110,200)"/>
+<use xlink:href="#star" transform = "translate(130,220)"/>
+<use xlink:href="#star" transform = "translate(100,250)"/>
+<use xlink:href="#star" transform = "translate(300,280)"/>
+<use xlink:href="#star" transform = "translate(210,250)"/>
+<use xlink:href="#star" transform = "translate(230,300)"/>
+<use xlink:href="#star" transform = "translate(400,350)"/>
+<use xlink:href="#star" transform = "translate(100,50)"/>
+<use xlink:href="#star" transform = "translate(100,30)"/>
+<use xlink:href="#star" transform = "translate(100,83)"/>
+<use xlink:href="#star" transform = "translate(40,70)"/>
+<use xlink:href="#star" transform = "translate(450,60)"/>
+<use xlink:href="#star" transform = "translate(500,70)"/>
+<use xlink:href="#star" transform = "translate(480,55)"/>
+<use xlink:href="#star" transform = "translate(510,60)"/>
+<use xlink:href="#star" transform = "translate(300,80)"/>
+<use xlink:href="#star" transform = "translate(750,60)"/>
+<use xlink:href="#star" transform = "translate(290,30)"/>
+
+
+<use xlink:href="#guyhead"/>
+<use xlink:href="#guybody"/>
+<use xlink:href="#guylegs"/>
 
 </svg>
