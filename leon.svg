@@ -1,11 +1,17 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-150 -30 1260 768" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect x="0" y="0" width="1260" height="768" style="fill:black; stroke:none" />
+<?xml-stylesheet type="text/css" href="./ressources/styles/styleLeo.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-300 -50 1560 818" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="0" y="0" width="1260" height="768"  class="recBackground"/>
 
 <g id="earth">
-  <circle cx="1100" cy="-30" r="300" style="fill:blue"/>
+  <circle cx="1100" cy="-30" r="300" class="oceanColor"/>
   <path id="Amerique" d="M930,-200 l-10,50 l-20,30 l-30,30 l-5,100 l50,60 l-10,20 l5,20 l10,10 l0,80 l20,5 l20,-10
-    l80,-100 l-130,-40 l-30,-40 l10,-10 l20,-5 l5,10 l110,-60 l-20,-40 Z" style="fill:green"/>
+    l80,-100 l-130,-40 l-30,-40 l10,-10 l20,-5 l5,10 l110,-60 l-20,-40 Z" class="mainLandColor"/>
+  <path id="Affique" d="M1100,-50 l-15,20 l-5,30 l30,50 l5,100 l20,50 l5,0 l65,20 l30,-25 l30,-10 l0,-250 l-50,-50 Z" class="mainLandColor"/>
+</g>
+
+<g id="moon">
+  <ellipse cx="630" cy="825" rx="800" ry="350" class="colorMoon"/>
 </g>
 
 <defs>
@@ -24,8 +30,6 @@
 
 <g id="guylegs">
      <polygon id="leftleg1" fill="rgb(255,255,255)" points="108,350 112,355 95,360 93,355" />
-    <!--<polygon id="rightleg1" fill="rgb(255,255,255)" points="108,350 112,355 95,360 93,355" />
--->
 </g>
 
 </defs>
@@ -51,31 +55,44 @@
 <use xlink:href="#star" transform = "translate(750,60)"/>
 <use xlink:href="#star" transform = "translate(290,30)"/>
 <use xlink:href="#star" transform = "translate(70,300)"/>
-<use xlink:href="#star" transform = "translate(32,450)"/>
-<use xlink:href="#star" transform = "translate(5,500)"/>
-<use xlink:href="#star" transform = "translate(21,510)"/>
-<use xlink:href="#star" transform = "translate(60,400)"/>
-<use xlink:href="#star" transform = "translate(100,470)"/>
 <use xlink:href="#star" transform = "translate(680,200)"/>
 <use xlink:href="#star" transform = "translate(620,210)"/>
 <use xlink:href="#star" transform = "translate(600,180)"/>
 <use xlink:href="#star" transform = "translate(550,180)"/>
 <use xlink:href="#star" transform = "translate(480,180)"/>
-<use xlink:href="#star" transform = "translate(480,600)"/>
-<use xlink:href="#star" transform = "translate(440,460)"/>
-<use xlink:href="#star" transform = "translate(410,510)"/>
-<use xlink:href="#star" transform = "translate(320,560)"/>
-<use xlink:href="#star" transform = "translate(320,560)"/>
-<use xlink:href="#star" transform = "translate(710,600)"/>
-<use xlink:href="#star" transform = "translate(730,430)"/>
-<use xlink:href="#star" transform = "translate(600,400)"/>
-<use xlink:href="#star" transform = "translate(600,300)"/>
-<use xlink:href="#star" transform = "translate(600,260)"/>
-<use xlink:href="#star" transform = "translate(600,600)"/>
-<use xlink:href="#star" transform = "translate(600,520)"/>
-<use xlink:href="#star" transform = "translate(930,520)"/>
-<use xlink:href="#star" transform = "translate(910,500)"/>
-<use xlink:href="#star" transform = "translate(880,350)"/>
+<use xlink:href="#star" transform = "translate(40,380)"/>
+<use xlink:href="#star" transform = "translate(15,410)"/>
+<use xlink:href="#star" transform = "translate(8,10)"/>
+<use xlink:href="#star" transform = "translate(-10,-50)"/>
+<use xlink:href="#star" transform = "translate(-50,-50)"/>
+<use xlink:href="#star" transform = "translate(-50,20)"/>
+<use xlink:href="#star" transform = "translate(-35,100)"/>
+<use xlink:href="#star" transform = "translate(-60,200)"/>
+<use xlink:href="#star" transform = "translate(-25,300)"/>
+<use xlink:href="#star" transform = "translate(-70,450)"/>
+<use xlink:href="#star" transform = "translate(-70,380)"/>
+<use xlink:href="#star" transform = "translate(790,370)"/>
+<use xlink:href="#star" transform = "translate(890,320)"/>
+<use xlink:href="#star" transform = "translate(910,410)"/>
+<use xlink:href="#star" transform = "translate(950,300)"/>
+<use xlink:href="#star" transform = "translate(1000,230)"/>
+<use xlink:href="#star" transform = "translate(1050,260)"/>
+<use xlink:href="#star" transform = "translate(1090,380)"/>
+<use xlink:href="#star" transform = "translate(740,320)"/>
+<use xlink:href="#star" transform = "translate(640,320)"/>
+<use xlink:href="#star" transform = "translate(520,320)"/>
+<use xlink:href="#star" transform = "translate(340,200)"/>
+<use xlink:href="#star" transform = "translate(300,150)"/>
+<use xlink:href="#star" transform = "translate(380,230)"/>
+<use xlink:href="#star" transform = "translate(100,-50)"/>
+<use xlink:href="#star" transform = "translate(350,-50)"/>
+<use xlink:href="#star" transform = "translate(640,80)"/>
+<use xlink:href="#star" transform = "translate(550,-20)"/>
+<use xlink:href="#star" transform = "translate(770,300)"/>
+<use xlink:href="#star" transform = "translate(790,230)"/>
+<use xlink:href="#star" transform = "translate(220,-50)"/>
+<use xlink:href="#star" transform = "translate(220,120)"/>
+
 
 
 <use xlink:href="#guyhead"/>
