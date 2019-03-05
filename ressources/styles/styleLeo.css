@@ -1,0 +1,16 @@
+.recBackground {
+  fill : black;
+  stroke : none;
+}
+
+.mainLandColor {
+  fill : green;
+}
+
+.oceanColor {
+  fill : blue
+}
+
+.colorMoon {
+  fill : grey;
+}
