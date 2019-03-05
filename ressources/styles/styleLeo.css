@@ -11,6 +11,10 @@
   fill : blue
 }
 
-.colorMoon {
+.moonColor {
+  fill : darkgrey;
+}
+
+.holeInMoonColor {
   fill : grey;
 }
