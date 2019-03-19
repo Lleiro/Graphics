@@ -23,7 +23,7 @@
   </Transform>
 
   <!-- 6 boxes -->
-  <Transform rotation="0.0 1 0 1.5708" translation="4 -2 2">
+  <!--<Transform rotation="0.0 1 0 1.5708" translation="4 -2 2">
     <Group DEF="twoBranchGroup">
       <Shape >
         <Box DEF="branch" size='6 2 2' />
@@ -52,10 +52,18 @@
     <Transform rotation="1 0 0 -1.5708">
       <Group USE="twoBranchGroup"/>
     </Transform>
-  </Transform> 
+  </Transform>-->
 
 
+  <!-- TheGherkin -->
+  <Shape DEF ="triangle">
+    <IndexedFaceSet coordIndex="0 1 2">
+	     <Coordinate point="0 0 0 1 0 0 0.5 1 0"/>
+	   </IndexedFaceSet>
+  </Shape>
 
+
+  
 
   <!-- coordinate axes -->
   <Inline url='"coordinate-axes.x3d"'/>
