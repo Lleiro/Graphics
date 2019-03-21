@@ -18,9 +18,9 @@ void indexedFaceSet(int nbPeak, int floors) {
     for (int i=0; i < nbPeak; i++) {
       valeurCourante = i + premiereVal;
       if (i == nbPeak -1)
-        printf("%d %d %d -1\n", (nbPeak+1)*etageCourrant, valeurCourante+1, valeurCourante-nbPeak+2);
+        printf("%d %d %d -1\n", premiereVal, valeurCourante+1, valeurCourante-nbPeak+2);
       else
-        printf("%d %d %d -1\n", (nbPeak+1)*etageCourrant, valeurCourante+1, valeurCourante+2);
+        printf("%d %d %d -1\n", premiereVal, valeurCourante+1, valeurCourante+2);
     }
   }
 }
@@ -34,10 +34,9 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
   printf("ANGLE : %f\n", angle);
   printf("Cos(angle) = %f\n", cos(angle*2));
 
-
   for(int i=0; i<floors + 1; i++) {
-    printf("------- DÉBUT ÉTAGE : %d ------\n", height/heightBetweenEachFloor);
-    printf("HAUTEUR : %d\n", height);
+    printf("0\t %d\t 0,\n", height);
+
 
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
@@ -46,9 +45,6 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
       y = radius * sin(angle * j);
       printf("%f\t %d\t %f,\n", x, height, y);
     }
-
-    printf("-------- FIN DE L'ÉTAGE : %d -------\n", height/heightBetweenEachFloor);
-    printf("====================\n");
 
     height += heightBetweenEachFloor;
   }
