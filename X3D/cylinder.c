@@ -9,9 +9,7 @@ void indexedFaceSet(int nbPeak, int floors) {
   int premiereVal;
   for (int j = 0; j<floors+1; j++) {
     etageCourrant = j;
-    
     premiereVal = nbPeak*etageCourrant+j;
-
     for (int i=0; i < nbPeak; i++) {
       valeurCourante = i + premiereVal;
       if (i == nbPeak -1)
@@ -22,7 +20,7 @@ void indexedFaceSet(int nbPeak, int floors) {
   }
 }
 
-void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
+void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   int height = 0;
   int heightBetweenEachFloor = maxHeight/floors;
   float x = 1;
@@ -33,8 +31,6 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
 
   for(int i=0; i<floors + 1; i++) {
     printf("0\t %d\t 0,\n", height);
-
-
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
 
@@ -44,6 +40,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
     }
 
     height += heightBetweenEachFloor;
+    radius = radius + 0.5;
   }
 
 }
@@ -55,6 +52,6 @@ int main () {
 
 
   indexedFaceSet(nbPeak, floors);
-  functionOfLife(maxHeight, floors, nbPeak, 1);
+  functionOfLife(maxHeight, floors, nbPeak, 3);
   return 0;
 }
