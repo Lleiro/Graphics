@@ -34,8 +34,13 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
 
-      x = radius * cos(angle * j + M_PI/nbPeak);
-      y = radius * sin(angle * j + M_PI/nbPeak);
+      if (i%2==0) {
+        x = radius * cos(angle * j + M_PI/nbPeak);
+        y = radius * sin(angle * j + M_PI/nbPeak);
+      } else {
+        x = radius * cos(angle * j);
+        y = radius * sin(angle * j);
+      }
       printf("%f\t %d\t %f,\n", x, height, y);
     }
 
@@ -53,7 +58,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 int main () {
   int maxHeight = 20;
   int floors = 3;
-  int nbPeak = 4;
+  int nbPeak = 6;
 
 
   indexedFaceSet(nbPeak, floors);
