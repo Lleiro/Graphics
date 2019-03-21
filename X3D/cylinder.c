@@ -53,8 +53,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
 
 int main () {
   int maxHeight = 8;
-  int floors = 1;
-  int nbPeak = 6;
+  int floors = 4;
+  int nbPeak = 10;
 
 
   indexedFaceSet(nbPeak, floors);
