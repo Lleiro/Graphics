@@ -9,11 +9,8 @@ void indexedFaceSet(int nbPeak, int floors) {
   int premiereVal;
   for (int j = 0; j<floors+1; j++) {
     etageCourrant = j;
-
-    if (j == 0)
-      premiereVal = 0;
-    else
-      premiereVal = nbPeak*etageCourrant+1;
+    
+    premiereVal = nbPeak*etageCourrant+j;
 
     for (int i=0; i < nbPeak; i++) {
       valeurCourante = i + premiereVal;
@@ -54,7 +51,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
 int main () {
   int maxHeight = 8;
   int floors = 4;
-  int nbPeak = 10;
+  int nbPeak = 6;
 
 
   indexedFaceSet(nbPeak, floors);
