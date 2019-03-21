@@ -56,14 +56,45 @@
 
 
   <!-- TheGherkin -->
-  <Shape DEF ="triangle">
-    <IndexedFaceSet coordIndex="0 1 2">
-	     <Coordinate point="0 0 0 1 0 0 0.5 1 0"/>
-	   </IndexedFaceSet>
+  <Shape>
+	<IndexedFaceSet
+		coordIndex='
+      0 1 2 -1
+      0 2 3 -1
+      0 3 4 -1
+      0 4 5 -1
+      0 5 6 -1
+      0 6 1 -1
+			'
+		solid='false'
+		colorPerVertex='false'
+    colorIndex='
+    0
+    0
+    0
+    0
+    0
+    0'
+	>
+	<Coordinate point= '
+    0         0     0
+    1.000000	 0	 0.000000,
+  0.500000	 0	 0.866025,
+  -0.500000	 0	 0.866025,
+  -1.000000	 0	 -0.000000,
+  -0.500000	 0	 -0.866025,
+  0.500000	 0	 -0.866025
+
+
+				' />
+        <Color color="1 1 1,
+          0 0 0"/>
+	</IndexedFaceSet>
+	<Appearance> <Material /> </Appearance>
   </Shape>
 
 
-  
+
 
   <!-- coordinate axes -->
   <Inline url='"coordinate-axes.x3d"'/>
