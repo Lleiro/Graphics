@@ -40,15 +40,18 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     }
 
     height += heightBetweenEachFloor;
-    radius = radius + 0.5;
+    if (i < floors*0.4)
+      radius = radius + 0.5;
+    else
+      radius -= 0.5;
   }
 
 }
 
 int main () {
-  int maxHeight = 8;
-  int floors = 4;
-  int nbPeak = 6;
+  int maxHeight = 20;
+  int floors = 10;
+  int nbPeak = 16;
 
 
   indexedFaceSet(nbPeak, floors);
