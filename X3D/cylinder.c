@@ -15,10 +15,15 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, int radius) {
     printf("HAUTEUR : %d\n", height);
 
     for(int j=0; j<nbPeak; j++){
-      //printf("Valeur de j = %d\n", j);      
-      printf("%f\t %d\t %f\n", x, height, y);
+      //printf("Valeur de j = %d\n", j);
+
       x = radius * cos(angle * j);
       y = radius * sin(angle * j);
+
+      if (j==nbPeak-1)
+        printf("%f\t %d\t %f\n", x, height, y);
+      else
+        printf("%f\t %d\t %f,\n", x, height, y);
       //printf("x = %f , y = %f \n", x, y);
     }
 
