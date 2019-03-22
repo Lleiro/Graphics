@@ -66,12 +66,12 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
         //   }
         // }
       } else if (etageCourrant == 0) {//si on est au rez-de chaussée
-        if (i < nbPeak -1)
-          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+nbPeak+2);
-        else if (i < nbPeak)
-          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
-        else
-          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
+        //if (i < nbPeak -1)
+          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+nbPeak+1);
+        // else if (i < nbPeak)
+        //   printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
+        // else
+        //   printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
       }
     }
   }
