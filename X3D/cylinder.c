@@ -36,12 +36,17 @@ void onFaitLesTriangles(int nbPeak, int floors) {
         if (etageCourrant%2 == 0) {
           /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
-            /* permet de faire les triangle à la suite */
+            //Triangle suppérieur
+            printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+            /* triangle inférieur */
             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
 
           } else {// DESSINE UNIQUEMENT UN TRIANGLE
+            //triangle suppérieur
+            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+            //triangle inf
             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
-          }
+            }
 
         } else {
           if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
@@ -50,7 +55,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //dessine le triangle inférieur
             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
             //dessine triangle adjacent
-            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+            //printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
 
           } else{//Dessine UNIQUEMENT le dernier triangle
             //dessine le triangle supérieur
@@ -58,7 +63,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //dessine le triangle inf
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
             //dessine triangle adjacent
-            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
+            //printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
           }
 
         }
@@ -107,8 +112,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
 int main () {
   int maxHeight = 20;
-  int floors = 10;
-  int nbPeak = 10;
+  int floors = 3;
+  int nbPeak = 6;
 
 
 
