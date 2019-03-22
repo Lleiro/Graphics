@@ -66,12 +66,10 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
         //   }
         // }
       } else if (etageCourrant == 0) {//si on est au rez-de chaussée
-        //if (i < nbPeak -1)
+        if (i != nbPeak-1)
           printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+nbPeak+1);
-        // else if (i < nbPeak)
-        //   printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
-        // else
-        //   printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
+        else
+          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+1);
       }
     }
   }
@@ -170,7 +168,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 int main () {
   int maxHeight = 20;
   int floors = 4;
-  int nbPeak = 4;
+  int nbPeak = 10;
 
 
 
