@@ -29,43 +29,36 @@ void onFaitLesTriangles(int nbPeak, int floors) {
     for (int i=0; i < nbPeak; i++) {
       valCourante = premiereVal+i;
 
-      //si on est pas au rez-de-chaussée
+      //si on est pas au rez-de-chaussée ni au dernier étage
       if (etageCourrant>= 1 && etageCourrant != floors) {
 
-        //si on est pas au dernier étage et que l'étage est pair
+        //si l'étage est pair
         if (etageCourrant%2 == 0) {
           /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
-
-
-
             /* permet de faire les triangle à la suite */
-            // if (etageCourrant%2 == 1)
-            //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
-            // else
-            //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
 
           } else {// DESSINE UNIQUEMENT UN TRIANGLE
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
+          }
 
-            // if (etageCourrant%2 == 1)
-            //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
-            // else
-            //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
-            }
         } else {
-          if (i != nbPeak-1){
+          if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
             //dessine triangle suppérieur
             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
             //dessine le triangle inférieur
             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
-          }
+            //dessine triangle adjacent
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
 
-          else{
+          } else{//Dessine UNIQUEMENT le dernier triangle
             //dessine le triangle supérieur
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
-
             //dessine le triangle inf
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
+            //dessine triangle adjacent
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
           }
 
         }
