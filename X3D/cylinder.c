@@ -32,13 +32,13 @@ void onFaitLesTriangles(int nbPeak, int floors) {
       //si on est pas au rez-de-chaussée
       if (etageCourrant>= 1) {
 
-        //si on est pas au dernier étage
+        //si on est pas au dernier étage et que l'étage est pair
         if (etageCourrant != floors && etageCourrant%2 == 0) {
           /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
 
             //dessine triangle suppérieur
-            //printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+            printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
 
             /* permet de faire les triangle à la suite */
             // if (etageCourrant%2 == 1)
@@ -47,7 +47,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
 
           } else {// DESSINE UNIQUEMENT UN TRIANGLE
-            //printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
             // if (etageCourrant%2 == 1)
             //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
             // else
