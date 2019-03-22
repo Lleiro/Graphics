@@ -42,11 +42,11 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
         }
 
-        if (i != nbPeak-1)
-          printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
-        else
-          printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
-        }
+          // if (i != nbPeak-1)
+          //   printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
+          // else
+          //   printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
+      }
 
     }
   }
