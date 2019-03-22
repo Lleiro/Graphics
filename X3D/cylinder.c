@@ -31,23 +31,21 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
 
       //si on est pas au rez-de-chaussée ni au dernier étage
       if (etageCourrant>= 1 && etageCourrant != floors) {
-        //si l'étage est pair
-        // if (etageCourrant%2 == 0) {
-        //   /* Pemert de GERER le passage à l'étage supp */
-        //   if (i != nbPeak-1) {
-        //     //Triangle suppérieur
-        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
+        if (etageCourrant%2 == 0) { //si l'étage est pair
+           if (i != nbPeak-1) { // si on ne dessine PAS le DERNIER triangle
+             //Triangle suppérieur
+             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
         //     /* triangle inférieur */
         //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
         //
-        //   } else {// DESSINE UNIQUEMENT UN TRIANGLE
+           } else {// dessine UNIQUEMENT le DERNIER triangle
         //     //triangle suppérieur
-        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
+             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
         //     //triangle inf
         //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
         //     }
         //
-        // } else {
+        //} else { //si l'étage est impair
         //   if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
         //     //dessine triangle suppérieur
         //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
@@ -63,8 +61,8 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
         //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
         //     //dessine triangle adjacent
         //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
-        //   }
-        // }
+          }
+        }
       } else if (etageCourrant == 0) {//si on est au rez-de chaussée
         if (i != nbPeak-1)
           printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+nbPeak+1);
@@ -168,7 +166,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 int main () {
   int maxHeight = 20;
   int floors = 4;
-  int nbPeak = 10;
+  int nbPeak = 6;
 
 
 
