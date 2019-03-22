@@ -37,7 +37,10 @@ void onFaitLesTriangles(int nbPeak, int floors) {
           //Permet de gerer le passagage à l'étage superieur
           if (i != nbPeak-1) {
             //printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
-            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+            if (etageCourrant%2 == 0)
+              printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+            else
+              printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
           } //else {
             //printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
         }
