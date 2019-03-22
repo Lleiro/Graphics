@@ -28,12 +28,17 @@ void onFaitLesTriangles(int nbPeak, int floors) {
     premiereVal = nbPeak*etageCourrant;
     for (int i=0; i < nbPeak; i++) {
       valCourante = premiereVal+i;
-      if (etageCourrant%2 == 1) {
 
+      //si on est pas au rez-de-chaussée
+      if (etageCourrant>= 1) {
+
+        //si on est pas au dernier étage
         if (etageCourrant != floors) {
-          if (i != nbPeak-1)
+          //Permet de gerer le passagage à l'étage superieur
+          if (i != nbPeak-1) {
             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
-          else
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+          } else
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
           }
 
@@ -84,8 +89,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
 int main () {
   int maxHeight = 20;
-  int floors = 10;
-  int nbPeak = 8;
+  int floors = 3;
+  int nbPeak = 6;
 
 
 
