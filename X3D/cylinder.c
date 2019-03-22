@@ -18,6 +18,66 @@ void indexedFaceSet(int nbPeak, int floors) {
   printf("-----------------\n");
 }
 
+void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
+  printf("DESSIN TRIANGLE ---------------\n");
+  int etageCourrant;
+  int premiereVal;
+  int valCourante;
+  for (int j = 0; j<floors+1; j++) {
+    etageCourrant = j;
+    premiereVal = nbPeak*etageCourrant;
+    for (int i=0; i < nbPeak; i++) {
+      valCourante = premiereVal+i;
+
+      //si on est pas au rez-de-chaussée ni au dernier étage
+      if (etageCourrant>= 1 && etageCourrant != floors) {
+        //si l'étage est pair
+        // if (etageCourrant%2 == 0) {
+        //   /* Pemert de GERER le passage à l'étage supp */
+        //   if (i != nbPeak-1) {
+        //     //Triangle suppérieur
+        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
+        //     /* triangle inférieur */
+        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
+        //
+        //   } else {// DESSINE UNIQUEMENT UN TRIANGLE
+        //     //triangle suppérieur
+        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
+        //     //triangle inf
+        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
+        //     }
+        //
+        // } else {
+        //   if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
+        //     //dessine triangle suppérieur
+        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+        //     //dessine le triangle inférieur
+        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
+        //     //dessine triangle adjacent
+        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+        //
+        //   } else{//Dessine UNIQUEMENT le dernier triangle
+        //     //dessine le triangle supérieur
+        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+        //     //dessine le triangle inf
+        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
+        //     //dessine triangle adjacent
+        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
+        //   }
+        // }
+      } else if (etageCourrant == 0) {//si on est au rez-de chaussée
+        if (i < nbPeak -1)
+          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante+nbPeak+2);
+        else if (i < nbPeak)
+          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
+        else
+          printf("%d %d %d -1\n", valCourante, valCourante+nbPeak, valCourante-nbPeak);
+      }
+    }
+  }
+  printf("-----------------\n");
+}
+
 void onFaitLesTriangles(int nbPeak, int floors) {
   printf("DESSIN TRIANGLE ---------------\n");
   int etageCourrant;
@@ -65,12 +125,8 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //dessine triangle adjacent
             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
           }
-
         }
-
-
       }
-
     }
   }
   printf("-----------------\n");
@@ -118,7 +174,7 @@ int main () {
 
 
 
-  onFaitLesTriangles(nbPeak, floors);
+  onFaitLesTrianglesAmeliores(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
   functionOfLife(maxHeight, floors, nbPeak, 3);
   return 0;
