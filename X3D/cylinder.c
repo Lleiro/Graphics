@@ -33,7 +33,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
       if (etageCourrant>= 1) {
 
         //si on est pas au dernier étage
-        if (etageCourrant != floors && etageCourrant%2 == 1) {
+        if (etageCourrant != floors && etageCourrant%2 == 0) {
           /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
 
