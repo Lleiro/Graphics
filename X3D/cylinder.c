@@ -36,13 +36,13 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
              //Triangle suppérieur
              printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
         //     /* triangle inférieur */
-        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
+             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
         //
            } else {// dessine UNIQUEMENT le DERNIER triangle
         //     //triangle suppérieur
              printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
         //     //triangle inf
-        //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
+             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
           }
         //
         //} else { //si l'étage est impair
