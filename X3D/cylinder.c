@@ -84,8 +84,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
 int main () {
   int maxHeight = 20;
-  int floors = 3;
-  int nbPeak = 6;
+  int floors = 10;
+  int nbPeak = 8;
 
 
 
