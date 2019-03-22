@@ -32,36 +32,32 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
       //si on est pas au rez-de-chaussée ni au dernier étage
       if (etageCourrant>= 1 && etageCourrant != floors) {
         if (etageCourrant%2 == 0) { //si l'étage est pair
-        //   if (i != nbPeak-1) { // si on ne dessine PAS le DERNIER triangle
+           if (i != nbPeak-1) { // si on ne dessine PAS le DERNIER triangle
              //Triangle suppérieur
-        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
+             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak+1);
         //     /* triangle inférieur */
         //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
         //
-        //   } else {// dessine UNIQUEMENT le DERNIER triangle
+           } else {// dessine UNIQUEMENT le DERNIER triangle
         //     //triangle suppérieur
-        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
+             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
         //     //triangle inf
         //     printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
-        //  }
-        //
-        } else { //si l'étage est impair
-           if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
-        //     //dessine triangle suppérieur
-             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
-        //     //dessine le triangle inférieur
-        //     printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
-        //     //dessine triangle adjacent
-             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
-        //
-           } else{//Dessine UNIQUEMENT le dernier triangle
-        //     //dessine le triangle supérieur
-             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
-        //     //dessine le triangle inf
-        //     printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
-        //     //dessine triangle adjacent
-             printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
           }
+        //
+        //} else { //si l'étage est impair
+        //    if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
+        // //     //dessine triangle suppérieur
+        //      printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+        // //     //dessine triangle adjacent
+        //      printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
+        // //
+        //    } else{//Dessine UNIQUEMENT le dernier triangle
+        // //     //dessine le triangle supérieur
+        //      printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+        // //     //dessine triangle adjacent
+        //      printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
+        //  }
         }
       } else if (etageCourrant == 0) {//si on est au rez-de chaussée
         if (i != nbPeak-1)
