@@ -43,9 +43,9 @@ void onFaitLesTriangles(int nbPeak, int floors) {
 
           } else {// DESSINE UNIQUEMENT UN TRIANGLE
             //triangle suppérieur
-            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
             //triangle inf
-            //printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante-nbPeak+1);
             }
 
         } else {
