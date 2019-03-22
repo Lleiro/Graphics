@@ -4,7 +4,7 @@
 
 
 void indexedFaceSet(int nbPeak, int floors) {
-
+  printf("DESSIN Etage ---------------\n");
   int etageCourrant;
   int premiereVal;
   for (int j = 0; j<floors+1; j++) {
@@ -15,6 +15,23 @@ void indexedFaceSet(int nbPeak, int floors) {
     }
     printf("-1 \n");
   }
+  printf("-----------------\n");
+}
+
+void onFaitLesTriangles(int nbPeak, int floors) {
+  printf("DESSIN TRIANGLE ---------------\n");
+  int etageCourrant;
+  int premiereVal;
+  int valCourante;
+  for (int j = 0; j<floors+1; j++) {
+    etageCourrant = j;
+    premiereVal = nbPeak*etageCourrant;
+    for (int i=0; i < nbPeak; i++) {
+      valCourante = premiereVal+i;
+      printf("%d %d %d -1 \n", valCourante, valCourante+1, valCourante+nbPeak);
+    }
+  }
+  printf("-----------------\n");
 }
 
 void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
@@ -57,6 +74,8 @@ int main () {
   int nbPeak = 6;
 
 
+
+  onFaitLesTriangles(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
   functionOfLife(maxHeight, floors, nbPeak, 3);
   return 0;
