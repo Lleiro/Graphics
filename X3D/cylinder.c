@@ -45,7 +45,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             //triangle suppérieur
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
             //triangle inf
-            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante-nbPeak+1);
+            printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
             }
 
         } else {
@@ -112,8 +112,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
 int main () {
   int maxHeight = 20;
-  int floors = 3;
-  int nbPeak = 6;
+  int floors = 10;
+  int nbPeak = 16;
 
 
 
