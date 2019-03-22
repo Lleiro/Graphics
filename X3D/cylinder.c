@@ -33,8 +33,8 @@ void onFaitLesTriangles(int nbPeak, int floors) {
       if (etageCourrant>= 1) {
 
         //si on est pas au dernier étage
-        if (etageCourrant != floors) {
-          //Permet de gerer le passagage à l'étage superieur
+        if (etageCourrant != floors && etageCourrant%2 == 1) {
+          /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
 
             //dessine triangle suppérieur
@@ -46,20 +46,21 @@ void onFaitLesTriangles(int nbPeak, int floors) {
             // else
             //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
 
-
-          } else { //Permet le passage à l'étage inferieur
-            // printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
+          } else {// DESSINE UNIQUEMENT UN TRIANGLE
+            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
             // if (etageCourrant%2 == 1)
             //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
             // else
             //   printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
             }
+        } else {
+          if (i != nbPeak-1)
+            printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
+          else
+            printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
         }
 
-          // if (i != nbPeak-1)
-          //   printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
-          // else
-          //   printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante-nbPeak);
+
       }
 
     }
