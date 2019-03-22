@@ -43,7 +43,7 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
              printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+1);
         //     //triangle adj
              printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante);
-          }        
+          }
         } else { //si l'étage est impair
            if (i != nbPeak-1){//Dessine tous les triangles SAUF le dernier
         //     //dessine triangle suppérieur
@@ -156,17 +156,23 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   }
 }
 
+void algoCouleur(int nbPeak, int floors){
+  int nbPeakTotal = nbPeak*2*floors-nbPeak; //-nbPeak car il faut retirer le rez-de-chaussée
+  for (int j=0; j < nbPeakTotal/6; j++)
+    printf("1 1 0 0 0 0\n");
+}
+
 
 
 int main () {
-  int maxHeight = 20;
-  int floors = 4;
-  int nbPeak = 6;
+  int maxHeight = 44;
+  int floors = 22;
+  int nbPeak = 18;
 
 
-
+  algoCouleur(nbPeak, floors);
   onFaitLesTrianglesAmeliores(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
-  functionOfLife(maxHeight, floors, nbPeak, 3);
+  functionOfLife(maxHeight, floors, nbPeak, 5);
   return 0;
 }
