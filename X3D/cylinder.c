@@ -30,10 +30,10 @@ void onFaitLesTriangles(int nbPeak, int floors) {
       valCourante = premiereVal+i;
 
       //si on est pas au rez-de-chaussée
-      if (etageCourrant>= 1) {
+      if (etageCourrant>= 1 && etageCourrant != floors) {
 
         //si on est pas au dernier étage et que l'étage est pair
-        if (etageCourrant != floors && etageCourrant%2 == 0) {
+        if (etageCourrant%2 == 0) {
           /* Pemert de GERER le passage à l'étage supp */
           if (i != nbPeak-1) {
 
