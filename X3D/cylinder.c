@@ -36,12 +36,18 @@ void onFaitLesTriangles(int nbPeak, int floors) {
         if (etageCourrant != floors) {
           //Permet de gerer le passagage à l'étage superieur
           if (i != nbPeak-1) {
+
+            //dessine triangle suppérieur
             printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+
+            /* permet de faire les triangle à la suite */
             if (etageCourrant%2 == 1)
               printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1, valCourante+nbPeak+1);
             else
               printf("%d %d %d -1\n", valCourante+nbPeak, valCourante, valCourante+nbPeak+1);
-          } else {
+
+
+          } else { //Permet le passage à l'étage inferieur
             printf("%d %d %d -1\n", valCourante, valCourante-nbPeak+1, valCourante+nbPeak);
             if (etageCourrant%2 == 1)
               printf("%d %d %d -1\n", valCourante+nbPeak, valCourante+1-nbPeak, valCourante+1);
