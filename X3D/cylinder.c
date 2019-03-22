@@ -28,7 +28,11 @@ void onFaitLesTriangles(int nbPeak, int floors) {
     premiereVal = nbPeak*etageCourrant;
     for (int i=0; i < nbPeak; i++) {
       valCourante = premiereVal+i;
-      printf("%d %d %d -1 \n", valCourante, valCourante+1, valCourante+nbPeak);
+      if (etageCourrant%2 == 1) {
+        printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante+nbPeak);
+        printf("%d %d %d -1\n", valCourante, valCourante+1, valCourante-nbPeak);
+      }
+
     }
   }
   printf("-----------------\n");
