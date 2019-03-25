@@ -151,7 +151,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     height += heightBetweenEachFloor;
 
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
-    radius = tempRadius + i*(1-i);
+    radius = tempRadius + 1/10*i*(25-i);
   }
 }
 
