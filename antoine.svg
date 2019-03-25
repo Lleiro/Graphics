@@ -41,23 +41,25 @@
 
   <!-- definition of the LEM's fire (under the engine to propusle the ship) -->
   <g id="lem-fire">
+    <path d="M 300 400 l 40 z" class="no-stroke blue"/>
+    <path d="M 360 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke light-blue"/>
+    <path d="M 370 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke white"/>
   </g>
 
-  <!-- definition of the LEM's fire (under the engine to propusle the ship) -->
+  <!-- definition of the rocket -->
   <g id="rocket">
-    <path class="stroke-3 orange" />
-    <circle id="hublot" cx="390" cy="350" r="30" class="stroke-8 light-blue"/>
-    <use xlink:href="#hublot" />
+    <path id="rocket-body" d="M 390 200 q 100 150 70 500 l -140 0 q -30 -350 70 -500 z" class="stroke-8 orange"/>
+    <circle id="hublot" cx="390" cy="350" r="30" class="stroke-5 light-blue"/>
     <use xlink:href="#hublot" transform="translate(0, 80)" />
     <use xlink:href="#hublot" transform="translate(0, 160)" />
-    <path id="rocket-leg" class="stroke-3 red" />
-    <use xlink:href="#rocket-leg" />
-    <use xlink:href="#rocket-leg" transform="translate(160, 0) scale(-1, 1)" />
+    <path id="rocket-leg" d="M 314 600 l 5 100 l -40 50 q -40 -120 34 -160 z" class="stroke-8 red" />
+    <use xlink:href="#rocket-leg" transform="scale(-1,1) translate(-780,0)  " />
   </g>
 
 </defs>
 
-<use xlink:href="#rocket"/>
+<use xlink:href="#rocket" />
+<use xlink:href="#lem-body" transform="translate(50,10) scale(0.5,0.5)"/>
 
 <!-- Display LEM's elements on the screen (into the viewport) -->
 <!-- <g id="LEM" transform="translate(-10, -70) ">

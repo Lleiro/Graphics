@@ -1,3 +1,7 @@
+.no-stroke {
+  stroke : 0;
+}
+
 .stroke-2 {
   stroke : black;
   stroke-width : 2;
@@ -6,6 +10,11 @@
 .stroke-3 {
   stroke : black;
   stroke-width : 3;
+}
+
+.stroke-5 {
+  stroke : black;
+  stroke-width : 5;
 }
 
 .stroke-8 {
@@ -47,4 +56,12 @@
 
 .orange {
   fill : #FF6600;
+}
+
+.white {
+  fill : white;
+}
+
+.blue {
+  fill : blue;
 }
