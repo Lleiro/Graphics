@@ -158,7 +158,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
 void algoCouleur(int nbPeak, int floors){
   int nbPeakTotal = nbPeak*2*floors-nbPeak; //-nbPeak car il faut retirer le rez-de-chaussée
-  for (int j=0; j < nbPeakTotal/6; j++)
+  for (int j=0; j < nbPeakTotal/36; j++)
     printf("1 1 0 0 0 0\n");
 }
 

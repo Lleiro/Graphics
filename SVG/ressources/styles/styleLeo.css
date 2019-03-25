@@ -13,12 +13,19 @@
 
 .moonColor {
   fill : darkgrey;
+  stroke:black;
 }
 
 .holeInMoonColor {
   fill : grey;
   stroke : black;
   stroke-width: 3;
+}
+
+.legs {
+  fill:white;
+  stroke:black;
+  stroke-width:2;
 }
 
 .headAstronaute {

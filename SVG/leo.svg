@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="./ressources/styles/styleLeo.css" ?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-500 -500 1760 1268" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="0 0 1260 768" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="0" y="0" width="1260" height="768"  class="recBackground"/>
 
 
@@ -38,7 +38,7 @@
 <!-- ASTRONAUTE -->
 <g id="headAndBody">
   <g id="guybody">
-    <rect id="body" x="-65" y="30" width="130" height="130"  rx="30" ry="30" class="headAstronaute"/>
+    <rect id="body" x="-65" y="30" width="130" height="130"  rx="30" ry="30" class="legs"/>
     <rect id="ecran" x="-37.5" y="60" width="75" height="75"  rx="10" ry="10" class="headAstronaute"/>
     <use xlink:href="#ecran" transform="translate(0,15) scale(0.85 0.85)" />
     <circle id="bouton" cx="-10" cy="95" r="12" class="headAstronaute"/>
@@ -48,11 +48,11 @@
   </g>
 
   <g id="guyhead">
-    <rect id="antenne" x="38" y="-60" width="6" height="35" class="headAstronaute"/>
-    <circle id="circleAntenne" cx="40" cy="-65" r="10" class="headAstronaute"/>
-    <rect id="oreilles" x="30" y="-30" width="30" height="30"  rx="10" ry="10" class="headAstronaute"/>
+    <rect id="antenne" x="38" y="-60" width="6" height="35" class="legs"/>
+    <circle id="circleAntenne" cx="40" cy="-65" r="10" class="legs"/>
+    <rect id="oreilles" x="30" y="-30" width="30" height="30"  rx="10" ry="10" class="legs"/>
     <use  xlink:href="#oreilles" transform = "translate(-90,0)"/>
-    <circle id = "helmet" cx="0" r="50" cy="0" class="headAstronaute" />
+    <circle id = "helmet" cx="0" r="50" cy="0" class="legs" />
     <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.6 0.6)"/>
     <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.55 0.55)"/>
     <ellipse id="petitBouton" cx="-35" cy="-20" rx="5" ry="8" class="headAstronaute" />
@@ -61,7 +61,7 @@
 </g>
 
 <g id="guylegs">
-     <path d="M 10 150 l30 0 l15 15 l0 15 l-45 0 z" class="white-stroke-3"/>
+     <path d="M 10 150 l30 0 l15 15 l0 15 l-45 0 z" class="legs"/>
 </g>
 
 
@@ -86,7 +86,6 @@
   <polygon points="360 250 420 250 415 220 365 220" class="stroke-3 light-grey" />
   <polygon points="410 220 370 220 370 190 410 190" class="stroke-3 light-grey" />
   <circle cx="390" cy="170" r="25" class="stroke-3 yellow" />
-
 </g>
 
 <!-- definition of the LEM's ladder -->
@@ -196,7 +195,8 @@
 
 
 <!-- spaceship animation -->
-<use xlink:href='#rocket' transform="translate(1000, 150) rotate(-90)">
+<use xlink:href='#rocket' transform="translate(200, 150) rotate(-90)">
+<use xlink:href='#headAstronaute'/>
 <animateMotion dur="9s" repeatCount="1" rotate="-90" >
 <mpath xlink:href="#path" />
 </animateMotion>
@@ -205,7 +205,7 @@
 </use>
 
 
-<g id="fullBody"/>
+<g id="fullBody">
   <use xlink:href="#guylegs" transform="translate(-50, 0)"/>
   <use xlink:href="#headAndBody"/>
   <use xlink:href="#guylegs"/>
