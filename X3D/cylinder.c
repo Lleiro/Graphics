@@ -132,6 +132,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   printf("ANGLE : %f\n", angle);
   printf("Cos(angle) = %f\n", cos(angle*2));
 
+  int tempRadius = radius;
+
   for(int i=0; i<floors + 1; i++) {
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
@@ -149,10 +151,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     height += heightBetweenEachFloor;
 
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
-    if (i < floors*0.4)
-      radius = radius + 0.5;
-    else
-      radius -= 0.5;
+    radius = tempRadius + i*(1-i);
   }
 }
 
