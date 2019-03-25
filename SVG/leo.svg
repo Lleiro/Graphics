@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="./ressources/styles/styleLeo.css" ?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="0 0 1260 768" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="-500 -500 1760 1268" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="0" y="0" width="1260" height="768"  class="recBackground"/>
 
 
@@ -33,22 +33,92 @@
       <animate attributeName="r" values="2;4;2" begin="0s" dur="1s" repeatCount="indefinite" />
   </circle>
 </g>
-<g id="guyhead">
-  <circle id = "head" cx="108" r="15" cy="280" style="fill:pink" />
-</g>
 
-<g id="guybody">
-  <ellipse id="body" cx="108" cy="325" rx="15" ry="30" style="fill:white" />
+
+<!-- ASTRONAUTE -->
+<g id="headAndBody">
+  <g id="guybody">
+    <rect id="body" x="-65" y="30" width="130" height="130"  rx="30" ry="30" class="headAstronaute"/>
+    <rect id="ecran" x="-37.5" y="60" width="75" height="75"  rx="10" ry="10" class="headAstronaute"/>
+    <use xlink:href="#ecran" transform="translate(0,15) scale(0.85 0.85)" />
+    <circle id="bouton" cx="-10" cy="95" r="12" class="headAstronaute"/>
+    <use xlink:href="#bouton" transform = "translate(25,35) scale(0.5 0.5)" class="stroke-3"/>
+    <use xlink:href="#bouton" transform = "translate(25,50) scale(0.5 0.5)" class="stroke-3"/>
+    <use xlink:href="#bouton" transform = "translate(25,65) scale(0.5 0.5)" class="stroke-3"/>
+  </g>
+
+  <g id="guyhead">
+    <rect id="antenne" x="38" y="-60" width="6" height="35" class="headAstronaute"/>
+    <circle id="circleAntenne" cx="40" cy="-65" r="10" class="headAstronaute"/>
+    <rect id="oreilles" x="30" y="-30" width="30" height="30"  rx="10" ry="10" class="headAstronaute"/>
+    <use  xlink:href="#oreilles" transform = "translate(-90,0)"/>
+    <circle id = "helmet" cx="0" r="50" cy="0" class="headAstronaute" />
+    <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.6 0.6)"/>
+    <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.55 0.55)"/>
+    <ellipse id="petitBouton" cx="-35" cy="-20" rx="5" ry="8" class="headAstronaute" />
+    <use xlink:href="#petitBouton" transform = "translate(70,0)"/>
+  </g>
 </g>
 
 <g id="guylegs">
-     <polygon id="leftleg1" fill="rgb(255,255,255)" points="108,350 112,355 95,360 93,355" />
+     <path d="M 10 150 l30 0 l15 15 l0 15 l-45 0 z" class="white-stroke-3"/>
+</g>
+
+
+
+
+
+<!-- LEM AND ROCKET -->
+<g id="lem-body">
+  <polygon points="350 700 430 700 450 740 330 740" class="stroke-3 dark-grey"/>
+  <g id="lem-leg">
+    <line x1="90" x2="-10" y1="560" y2="800" class="stroke-8 transparent" />
+    <line x1="200" x2="10" y1="700" y2="755" class="stroke-8 transparent" />
+    <polygon points="60 600 75 615 35 715 20 700" class="stroke-2 light-grey" />
+  </g>
+  <use xlink:href="#lem-leg" />
+  <use xlink:href="#lem-leg" transform="translate(780, 0) scale(-1,1)" />
+
+  <polygon points="90 500 690 500 690 700 90 700" class="stroke-3 gold" />
+  <polygon points="250 210 530 210 530 500 250 500" class="stroke-3 light-grey" />
+  <circle cx="390" cy="350" r="110" class="stroke-3 dark-grey"/>
+  <polygon points="355 250 425 250 440 470 340 470" class="stroke-3 white" />
+  <polygon points="360 250 420 250 415 220 365 220" class="stroke-3 light-grey" />
+  <polygon points="410 220 370 220 370 190 410 190" class="stroke-3 light-grey" />
+  <circle cx="390" cy="170" r="25" class="stroke-3 yellow" />
+
+</g>
+
+<!-- definition of the LEM's ladder -->
+<g id="lem-ladder">
+</g>
+
+<!-- definition of the LEM's door -->
+<g id="lem-door">
+  <rect x="355" y="355" width="70" height="65" rx="10" ry="10" class="stroke-3 dark-grey" />
+</g>
+
+<!-- definition of the LEM's fire (under the engine to propusle the ship) -->
+<g id="lem-fire">
+  <path d="M 300 400 l 40 z" class="no-stroke blue"/>
+  <path d="M 360 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke light-blue"/>
+  <path d="M 370 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke white"/>
+</g>
+
+<!-- definition of the rocket -->
+<g id="rocket">
+  <path id="rocket-body" d="M 0 0 q 100 150 70 500 l -140 0 q -30 -350 70 -500 z" class="stroke-8 orange"/>
+  <circle id="hublot" cx="0" cy="150" r="30" class="stroke-5 light-blue"/>
+  <use xlink:href="#hublot" transform="translate(0, 80)" />
+  <use xlink:href="#hublot" transform="translate(0, 160)" />
+  <path id="rocket-leg" d="M -76 400 l 5 100 l -40 50 q -40 -120 34 -160 z" class="stroke-8 red" />
+  <use xlink:href="#rocket-leg" transform="scale(-1,1) translate(0,0)  " />
 </g>
 
 </defs>
 
 <!-- path defined for spaceship animation -->
-<path id ="path" d="M790,50 600,580"
+<path id ="path" d="M1050,150 200,150"
   fill="none" />
 
 <!-- Draw Earth -->
@@ -57,20 +127,11 @@
 <use xlink:href="#moon" transform = "translate(630, 825)"/>
 
 <!-- Draw Holes in Moon -->
-<use xlink:href="#holeInMoon" transform = "translate(100, 720) rotate(4)  scale(0.8,1.2)"/>
-<use xlink:href="#holeInMoon" transform = "translate(300, 660) rotate(-8)"/>
-<use xlink:href="#holeInMoon" transform = "translate(975, 0) rotate(42) scale(0.5, 2.2)"/>
-<use xlink:href="#holeInMoon" transform = "translate(1200, 680) rotate(5)  scale(1.5, 1.82)"/>
+<use xlink:href="#holeInMoon" transform = "translate(100, 720) rotate(10)  scale(0.8,1.2)"/>
+<use xlink:href="#holeInMoon" transform = "translate(500, 660) rotate(-8)"/>
+<use xlink:href="#holeInMoon" transform = "translate(800, 750) rotate(42) scale(0.5, 2.2)"/>
+<use xlink:href="#holeInMoon" transform = "translate(1200, 750) rotate(10)  scale(1.5, 1.82)"/>
 
-
-<!-- spaceship animation -->
-<path d="M-25,-12.5 L25,-12.5 L 0,-87.5 z"
-      fill="green" stroke="none" stroke-width="7.06"  >
-<animateMotion dur="9s" repeatCount="indefinite" rotate="auto" >
-<mpath xlink:href="#path" />
-</animateMotion>
-  <animateTransform type="scale" from="10" to= "30" begin="0s" dur="9s" />
-</path>
 
 
 <!-- drawing stars -->
@@ -134,8 +195,20 @@
 <use xlink:href="#star" transform = "translate(220,120)"/>
 
 
-<use xlink:href="#guyhead"/>
-<use xlink:href="#guybody"/>
-<use xlink:href="#guylegs"/>
+<!-- spaceship animation -->
+<use xlink:href='#rocket' transform="translate(1000, 150) rotate(-90)">
+<animateMotion dur="9s" repeatCount="1" rotate="-90" >
+<mpath xlink:href="#path" />
+</animateMotion>
+<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="9s" repeatCount="1"
+      />
+</use>
+
+
+<g id="fullBody"/>
+  <use xlink:href="#guylegs" transform="translate(-50, 0)"/>
+  <use xlink:href="#headAndBody"/>
+  <use xlink:href="#guylegs"/>
+</g>
 
 </svg>
