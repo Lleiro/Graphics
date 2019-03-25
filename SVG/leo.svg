@@ -7,6 +7,7 @@
 
 
 <defs>
+
 <!-- EARTH ELEMENTS -->
 <g id="earth">
   <circle cx="0" cy="0" r="300" class="oceanColor"/>
@@ -46,6 +47,10 @@
 
 </defs>
 
+<!-- path defined for spaceship animation -->
+<path id ="path" d="M790,50 600,580"
+  fill="none" />
+
 <!-- Draw Earth -->
 <use xlink:href="#earth" transform = "translate(1100,-30)"/>
 <!-- Draw Moon -->
@@ -58,8 +63,14 @@
 <use xlink:href="#holeInMoon" transform = "translate(1200, 680) rotate(5)  scale(1.5, 1.82)"/>
 
 
-
-
+<!-- spaceship animation -->
+<path d="M-25,-12.5 L25,-12.5 L 0,-87.5 z"
+      fill="green" stroke="none" stroke-width="7.06"  >
+<animateMotion dur="9s" repeatCount="indefinite" rotate="auto" >
+<mpath xlink:href="#path" />
+</animateMotion>
+  <animateTransform type="scale" from="10" to= "30" begin="0s" dur="9s" />
+</path>
 
 
 <!-- drawing stars -->

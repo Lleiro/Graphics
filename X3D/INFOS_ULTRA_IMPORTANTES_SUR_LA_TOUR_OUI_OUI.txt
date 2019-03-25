@@ -1,0 +1,26 @@
+Nombres de triangle (groupes) :
+
+- 22 de hauteur
+- 18 de circonférence
+
+- alternance motif : 4 triangle clair - 2 triangle foncé
+
+--------------------------------------
+Groupe de triangle :
+
+composition :
+
+0 0 0 0
+ 0 0 0
+  0 0
+   0
+
+   ou
+
+   0
+  0 0
+ 0 0 0
+0 0 0 0
+-----------------------------------------
+
+- environs 14 arbres autour de la tour
