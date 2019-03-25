@@ -132,7 +132,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   printf("ANGLE : %f\n", angle);
   printf("Cos(angle) = %f\n", cos(angle*2));
 
-  int tempRadius = radius;
+  float tempRadius = radius;
 
   for(int i=0; i<floors + 1; i++) {
     for(int j=0; j<nbPeak; j++){
@@ -151,7 +151,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     height += heightBetweenEachFloor;
 
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
-    radius = tempRadius + 1/10*i*(25-i);
+    radius = tempRadius + (1/2*maxHeight) * i * (maxHeight-i);
+    //printf("Valeur de i: %d RADIUS : %f\n", i,tempRadius + (-i*i+22*i)/10);
   }
 }
 
@@ -172,6 +173,6 @@ int main () {
   algoCouleur(nbPeak, floors);
   onFaitLesTrianglesAmeliores(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
-  functionOfLife(maxHeight, floors, nbPeak, 5);
+  functionOfLife(maxHeight, floors, nbPeak, 3);
   return 0;
 }
