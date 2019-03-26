@@ -100,3 +100,15 @@
 .blue {
   fill : blue;
 }
+
+.vitre {
+  fill : #818181;
+}
+
+.freeze {
+  fill : "freeze";
+}
+
+.none {
+  fill : none;
+}

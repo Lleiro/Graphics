@@ -11,8 +11,8 @@
 <!-- EARTH ELEMENTS -->
 <g id="earth">
   <circle cx="0" cy="0" r="300" class="oceanColor"/>
-  <path id="Amerique" d="M-170,-170 l-10,50 l-20,30 l-30,30 l-5,100 l50,60 l-10,20 l5,20 l10,10 l0,80 l20,5 l20,-10
-    l80,-100 l-130,-40 l-30,-40 l10,-10 l20,-5 l5,10 l110,-60 l-20,-40 Z" class="mainLandColor"/>
+  <path id="Amerique" d="M-170,-170 l-10,50 l-20,30 l-30,30 l-5,100 l50,60 l-10,20 l5,20 l10,10 l0,80 l20,5 l20,-10 c -5,-20 80,-60
+    80,-100 q -65,-50 -130,-40 l-30,-40 l10,-10 l20,-5 l5,10 l110,-60 l-20,-40 Z" class="mainLandColor"/>
   <path id="Affique" d="M0,-20 l-15,20 l-5,30 l30,50 l5,100 l20,50 l5,0 l65,20 l30,-25 l30,-10 l0,-250 l-50,-50 Z" class="mainLandColor"/>
 </g>
 <!-- ============== -->
@@ -53,8 +53,8 @@
     <rect id="oreilles" x="30" y="-30" width="30" height="30"  rx="10" ry="10" class="legs"/>
     <use  xlink:href="#oreilles" transform = "translate(-90,0)"/>
     <circle id = "helmet" cx="0" r="50" cy="0" class="legs" />
-    <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.6 0.6)"/>
-    <use xlink:href="#helmet" transform = "translate(0,-2) scale(0.55 0.55)"/>
+    <circle id = "vitre"  cx="0" r="30" cy="-2" class="vitre"/>
+    <use xlink:href="#vitre" transform = "scale(0.9 0.9)" class="vitre"/>
     <ellipse id="petitBouton" cx="-35" cy="-20" rx="5" ry="8" class="headAstronaute" />
     <use xlink:href="#petitBouton" transform = "translate(70,0)"/>
   </g>
@@ -114,11 +114,15 @@
   <use xlink:href="#rocket-leg" transform="scale(-1,1) translate(0,0)  " />
 </g>
 
+<g id="rocketWithHead">
+  <use xlink:href="#rocket"/>
+  <use xlink:href="#guyhead" transform="translate(-10,230) rotate(90) scale(0.35 0.35)"/>
+</g>
+
 </defs>
 
 <!-- path defined for spaceship animation -->
-<path id ="path" d="M1050,150 200,150"
-  fill="none" />
+<path stroke="white" id ="pathFusee" d="M1200,150 Q 200,150 200,200"/>
 
 <!-- Draw Earth -->
 <use xlink:href="#earth" transform = "translate(1100,-30)"/>
@@ -195,15 +199,21 @@
 
 
 <!-- spaceship animation -->
-<use xlink:href='#rocket' transform="translate(200, 150) rotate(-90)">
-<use xlink:href='#headAstronaute'/>
-<animateMotion dur="9s" repeatCount="1" rotate="-90" >
-<mpath xlink:href="#path" />
-</animateMotion>
-<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="9s" repeatCount="1"
-      />
-</use>
+<g>
+  <use xlink:href='#rocket'/>
+  <g>
+    <use xlink:href='#guyhead' transform="translate(-10, 230) scale(0.35 0.35) rotate(90)"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 0 230;0 0 230;-90 0 230" keyTimes="0;0.6;1" dur="10s" repeatCount="1" class="freeze" additive="sum" fill="freeze"/>
+  </g>
+  <!--tentative d'utilisation de la classe freeze, sans grand succès-->
+  <animateMotion dur="9s" repeatCount="1" fill="freeze">
+    <mpath xlink:href="#pathFusee" />
+  </animateMotion>
+  <animateTransform attributeName="transform" type="translate" values=" 0 -250; 0 -250;0 0" keyTimes="0;0.6;1" begin="0" dur="10s" repeatCount="1" class="freeze" additive="sum"/>
+  <animateTransform attributeName="transform" type="rotate" values="-90 0 250;-90 0 250;0 0 250" keyTimes="0;0.6;1" begin="0" dur="9s" repeatCount="1" class="freeze" additive="sum"/>
 
+  <animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="9s" repeatCount="1" class="freeze" additive="sum"/>
+</g>
 
 <g id="fullBody">
   <use xlink:href="#guylegs" transform="translate(-50, 0)"/>
