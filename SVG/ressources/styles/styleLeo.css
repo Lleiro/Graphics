@@ -57,6 +57,12 @@
   stroke-width : 8;
 }
 
+.stroke-8-Sombre {
+  stroke : #202020;
+  stroke-width : 8;
+}
+
+
 .yellow {
   fill : #ffff00;
 }

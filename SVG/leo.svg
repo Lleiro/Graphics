@@ -72,8 +72,8 @@
 <g id="lem-body">
   <polygon points="350 700 430 700 450 740 330 740" class="stroke-3 dark-grey"/>
   <g id="lem-leg">
-    <line x1="90" x2="-10" y1="560" y2="800" class="stroke-8 transparent" />
-    <line x1="200" x2="10" y1="700" y2="755" class="stroke-8 transparent" />
+    <line x1="90" x2="-10" y1="560" y2="800" class="stroke-8-Sombre" />
+    <line x1="200" x2="10" y1="700" y2="755" class="stroke-8-Sombre" />
     <polygon points="60 600 75 615 35 715 20 700" class="stroke-2 light-grey" />
   </g>
   <use xlink:href="#lem-leg" />
@@ -107,25 +107,45 @@
 <!-- definition of the rocket -->
 <g id="rocket">
   <path id="rocket-body" d="M 0 0 q 100 150 70 500 l -140 0 q -30 -350 70 -500 z" class="stroke-8 orange"/>
-  <circle id="hublot" cx="0" cy="150" r="30" class="stroke-5 light-blue"/>
-  <use xlink:href="#hublot" transform="translate(0, 80)" />
-  <use xlink:href="#hublot" transform="translate(0, 160)" />
+
   <path id="rocket-leg" d="M -76 400 l 5 100 l -40 50 q -40 -120 34 -160 z" class="stroke-8 red" />
   <use xlink:href="#rocket-leg" transform="scale(-1,1) translate(0,0)  " />
 </g>
 
-<g id="rocketWithHead">
-  <use xlink:href="#rocket"/>
-  <use xlink:href="#guyhead" transform="translate(-10,230) rotate(90) scale(0.35 0.35)"/>
+<g id="hublots">
+  <circle id="hublot" cx="0" cy="150" r="30" class="stroke-5 light-blue"/>
+
+  <use xlink:href="#hublot" transform="translate(0, 80)" />
+  <use xlink:href="#hublot" transform="translate(0, 160)" />
 </g>
 
 </defs>
 
 <!-- path defined for spaceship animation -->
-<path stroke="white" id ="pathFusee" d="M1200,150 Q 200,150 200,200"/>
+<path id ="pathFusee" d="M1200,150 Q 200,150 200,0"/>
+<path id="pathLEM" d="M250, 250 L 200, 600"/>
+<path id="pathAstro" d="M100, 650 C250 600 500 550 700 550 L850 480"/>
+<path id="fallAstro" d="M0 0 0 150"/>
 
 <!-- Draw Earth -->
 <use xlink:href="#earth" transform = "translate(1100,-30)"/>
+
+
+<!--Falling astro behind moon -->
+<g>
+  <animate attributeName="opacity" from="0" to="0" begin="0s" dur="27.8s"/>
+  <animate attributeName="opacity" from="0" to="1" begin="27.8s" dur="1s"/>
+  <use xlink:href="#guylegs" transform="translate(830, 480) scale(0.3)"/>
+  <use xlink:href="#headAndBody" transform='translate(850,480) scale(0.3)' />
+  <use xlink:href="#guylegs" transform="translate(850,480) scale(0.3)"/>
+  <animateTransform attributeName="transform" type="rotate" values="45 855 500;-90 855 500;45 855 500" keyTimes="0;0.333;0.666;1" dur="1s" begin="29s" repeatCount="5" additive="sum" fill="freeze"/>
+  <animateMotion dur="5s" begin="30s" repeatCount="1" fill="freeze">
+    <mpath xlink:href="#fallAstro"/>
+  </animateMotion>
+</g>
+
+
+
 <!-- Draw Moon -->
 <use xlink:href="#moon" transform = "translate(630, 825)"/>
 
@@ -198,27 +218,69 @@
 <use xlink:href="#star" transform = "translate(220,120)"/>
 
 
+
+<!--walking astro-->
+<g>
+  <animate attributeName="opacity" from="0" to="0" begin="0s" dur="20s"/>
+  <g>
+    <use xlink:href="#guylegs" transform="translate(-20, 0) scale(0.3)"/>
+    <animateTransform  attributeName="transform" type="translate" values="0 0;20 0; 0 0" keyTimes="0;0.5;1" begin="20s" dur="1.5s" repeatCount="15" additive="sum"/>
+  </g>
+  <use xlink:href="#headAndBody" transform='translate(0) scale(0.3)' />
+  <g>
+    <use xlink:href="#guylegs" transform='translate(0) scale(0.3)'/>
+    <animateTransform  attributeName="transform" type="translate" values="0 0;-20 0; 0 0" keyTimes="0;0.5;1" begin="20s" dur="1.5s" repeatCount="15" additive="sum"/>
+  </g>
+  <animateMotion dur="8s" begin="20s" repeatCount="1" fill="freeze">
+    <mpath xlink:href="#pathAstro"/>
+  </animateMotion>
+  <animate attributeName="opacity" from="1" to="0" begin="28s" dur="1s" fill="freeze"/>
+</g>
+
+<!-- LEM animation -->
+<g>
+  <use xlink:href='#lem-body' transform="translate(-100 0) scale(0.1 0.1)"/>
+  <animateMotion dur="5" begin="13s" repeatCount="1" fill="freeze">
+    <mpath xlink:href="#pathLEM"/>
+  </animateMotion>
+  <animateTransform attributeName="transform" type="scale" from="1" to="1.8" begin="13s" dur="5s" repeatCount="1" fill="freeze" additive="sum"/>
+</g>
+
+
+
+
 <!-- spaceship animation -->
 <g>
   <use xlink:href='#rocket'/>
+  <use xlink:href='#hublots'/>
   <g>
     <use xlink:href='#guyhead' transform="translate(-10, 230) scale(0.35 0.35) rotate(90)"/>
-    <animateTransform attributeName="transform" type="rotate" values="0 0 230;0 0 230;-90 0 230" keyTimes="0;0.6;1" dur="10s" repeatCount="1" class="freeze" additive="sum" fill="freeze"/>
+    <animateTransform  attributeName="transform" type="translate" values="0 0; -150 0" keyTimes="0;1" begin="10s" dur="2s" repeatCount="1" additive="sum" fill="freeze"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 0 230;0 0 230;-90 0 230" keyTimes="0;0.6;1" dur="9s" repeatCount="1" additive="sum" fill="freeze"/>
+
   </g>
+  <path d="M-32 225 c0 50 65 50 65 0 l0 90 c0 -50 -65 -50 -65 0  Z" class="orange"/>
+  <path d="M-32 305 c0 50 65 50 65 0 l0 150 l-65 0 Z" class="orange"/>
+  <path id="hub" d="M-32 225 c0 50 65 50 65 0 l -5 0 c0 45 -55 45 -55 0 Z" class="noir"/>
+  <use xlink:href="#hub" y="80"/>
+  <use xlink:href="#hub" y="90" transform="rotate(180 0 315)"/>
+
   <!--tentative d'utilisation de la classe freeze, sans grand succès-->
   <animateMotion dur="9s" repeatCount="1" fill="freeze">
     <mpath xlink:href="#pathFusee" />
   </animateMotion>
   <animateTransform attributeName="transform" type="translate" values=" 0 -250; 0 -250;0 0" keyTimes="0;0.6;1" begin="0" dur="10s" repeatCount="1" class="freeze" additive="sum"/>
   <animateTransform attributeName="transform" type="rotate" values="-90 0 250;-90 0 250;0 0 250" keyTimes="0;0.6;1" begin="0" dur="9s" repeatCount="1" class="freeze" additive="sum"/>
-
-  <animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="9s" repeatCount="1" class="freeze" additive="sum"/>
+  <animateTransform attributeName="transform" type="scale" from="0" to="0.6" begin="0s" dur="9s" repeatCount="1" fill="freeze" additive="sum"/>
 </g>
 
+
+
+<!--
 <g id="fullBody">
   <use xlink:href="#guylegs" transform="translate(-50, 0)"/>
   <use xlink:href="#headAndBody"/>
   <use xlink:href="#guylegs"/>
 </g>
-
+-->
 </svg>
