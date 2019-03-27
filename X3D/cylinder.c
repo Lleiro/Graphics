@@ -134,7 +134,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
   float tempRadius = radius;
 
-  for(int i=0; i<floors; i++) {
+  for(int i=0; i<floors+1; i++) {
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
 
