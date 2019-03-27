@@ -124,8 +124,8 @@ void onFaitLesTriangles(int nbPeak, int floors) {
 }
 
 void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
-  int height = 0;
-  int heightBetweenEachFloor = maxHeight/(floors);
+  float height = 0;
+  float heightBetweenEachFloor = maxHeight/(floors);
   float x = 0;
   float y = 0;
   float angle = (2*M_PI/nbPeak);
@@ -135,6 +135,11 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   float tempRadius = radius;
 
   for(int i=0; i<floors + 1 ; i++) {
+
+    if (i == floors) {
+      height += heightBetweenEachFloor/4;
+    }
+
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
 
@@ -148,14 +153,17 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
         x = 0;
         y = 0;
       }
-      printf("%f\t %d\t %f,\n", x, height, y);
+
+
+      printf("%f\t %f\t %f,\n", x, height, y);
     }
 
-    height += heightBetweenEachFloor;
-
+    if (i != floors -1){
+      height += heightBetweenEachFloor;
+    }
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
     float var = i;
-    radius = tempRadius + (-var*var+17*var)/(42-var);
+    radius = tempRadius + (-var*(var/15)+var)/(25-var);
     //printf("Valeur de i: %d RADIUS : %f\n", i, tempRadius + (-x*x+20*x)/50);
   }
 
