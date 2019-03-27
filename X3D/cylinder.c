@@ -152,14 +152,9 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
     float var = i;
-    radius = tempRadius + (-var*var+20*var)/(37-var);
+    radius = tempRadius + (-var*var+20*var)/(28-var);
     //printf("Valeur de i: %d RADIUS : %f\n", i, tempRadius + (-x*x+20*x)/50);
   }
-
-  //finition du toit
-  x = 0;
-  y = 0;
-  printf("%f\t %d\t %f,\n", x, height, y);
 }
 
 void algoCouleur(int nbPeak, int floors){
