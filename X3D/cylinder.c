@@ -125,8 +125,8 @@ void onFaitLesTriangles(int nbPeak, int floors) {
 
 void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
   int height = 0;
-  int heightBetweenEachFloor = maxHeight/floors;
-  float x = 1;
+  int heightBetweenEachFloor = maxHeight/(floors-1);
+  float x = 0;
   float y = 0;
   float angle = (2*M_PI/nbPeak);
   printf("ANGLE : %f\n", angle);
@@ -134,7 +134,7 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
 
   float tempRadius = radius;
 
-  for(int i=0; i<floors + 1; i++) {
+  for(int i=0; i<floors; i++) {
     for(int j=0; j<nbPeak; j++){
       //printf("Valeur de j = %d\n", j);
 
@@ -151,10 +151,15 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     height += heightBetweenEachFloor;
 
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
-    float x = i;
-    radius = tempRadius + (-x*x+20*x)/(37-x);
+    float var = i;
+    radius = tempRadius + (-var*var+20*var)/(37-var);
     //printf("Valeur de i: %d RADIUS : %f\n", i, tempRadius + (-x*x+20*x)/50);
   }
+
+  //finition du toit
+  x = 0;
+  y = 0;
+  printf("%f\t %d\t %f,\n", x, height, y);
 }
 
 void algoCouleur(int nbPeak, int floors){

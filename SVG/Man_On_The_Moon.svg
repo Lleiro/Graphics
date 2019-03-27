@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<?xml-stylesheet type="text/css" href="./ressources/styles/styleLeo.css" ?>
+<?xml-stylesheet type="text/css" href="./ressources/styles/styleManOnMoon.css" ?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1260" height="768" viewBox="0 0 1260 768" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="0" y="0" width="1260" height="768"  class="recBackground"/>
 
@@ -97,12 +97,12 @@
   <rect x="355" y="355" width="70" height="65" rx="10" ry="10" class="stroke-3 dark-grey" />
 </g>
 
-<!-- definition of the LEM's fire (under the engine to propusle the ship) -->
+<!-- definition of the LEM's fire (under the engine to propusle the ship) ON NE L'UTILISE PAS 
 <g id="lem-fire">
   <path d="M 300 400 l 40 z" class="no-stroke blue"/>
   <path d="M 360 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke light-blue"/>
   <path d="M 370 750 q 100 -150 70 -500 l -140 0 q -30 350 70 500 z" class="no-stroke white"/>
-</g>
+</g> -->
 
 <!-- definition of the rocket -->
 <g id="rocket">
@@ -259,9 +259,13 @@
     <animateTransform  attributeName="transform" type="translate" values="0 0; -150 0" keyTimes="0;1" begin="10s" dur="2s" repeatCount="1" additive="sum" fill="freeze"/>
     <animateTransform attributeName="transform" type="rotate" values="0 0 230;0 0 230;-90 0 230" keyTimes="0;0.6;1" dur="9s" repeatCount="1" additive="sum" fill="freeze"/>
   </g>
+  <!-- Cache pour l'animation astronaute -->
   <path d="M-32 225 c0 50 65 50 65 0 l0 90 c0 -50 -65 -50 -65 0  Z" class="orange"/>
   <path d="M-32 305 c0 50 65 50 65 0 l0 150 l-65 0 Z" class="orange"/>
+  <!-- cache contour hublot -->
   <path id="hub" d="M-32 225 c0 50 65 50 65 0 l -5 0 c0 45 -55 45 -55 0 Z" class="noir"/>
+
+
   <use xlink:href="#hub" y="80"/>
   <use xlink:href="#hub" y="90" transform="rotate(180 0 315)"/>
 
