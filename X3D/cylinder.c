@@ -163,7 +163,8 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     }
     //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
     float var = i;
-    radius = tempRadius + (-var*(var/15)+var)/(25-var);
+    //radius = tempRadius + (-var*(var/15)+var)/(25-var);
+    radius = tempRadius + var*(1-var)/157;
     //printf("Valeur de i: %d RADIUS : %f\n", i, tempRadius + (-x*x+20*x)/50);
   }
 
