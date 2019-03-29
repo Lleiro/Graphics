@@ -18,7 +18,7 @@ void indexedFaceSet(int nbPeak, int floors) {
   printf("-----------------\n");
 }
 
-void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
+void TrianglesAmeliores(int nbPeak, int floors) {
   printf("DESSIN TRIANGLE ---------------\n");
   int etageCourrant;
   int premiereVal;
@@ -69,7 +69,7 @@ void onFaitLesTrianglesAmeliores(int nbPeak, int floors) {
   printf("-----------------\n");
 }
 
-void onFaitLesTriangles(int nbPeak, int floors) {
+void Triangles(int nbPeak, int floors) {
   printf("DESSIN TRIANGLE ---------------\n");
   int etageCourrant;
   int premiereVal;
@@ -123,7 +123,7 @@ void onFaitLesTriangles(int nbPeak, int floors) {
   printf("-----------------\n");
 }
 
-void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
+void calculCoordonnees(int maxHeight, int floors, int nbPeak, float radius) {
   float height = 0;
   float heightBetweenEachFloor = maxHeight/(floors);
   float x = 0;
@@ -161,9 +161,13 @@ void functionOfLife(int maxHeight, int floors, int nbPeak, float radius) {
     if (i != floors -1){
       height += heightBetweenEachFloor;
     }
-    //Il faudrait un truc du style f(x) = K + 1/(2*maxHeight)  * X (maxHeight - X); où K = une constante
+
     float var = i;
-    radius = tempRadius + (var*-var+10*var)/(100-var);
+    if (i<17) {
+      radius = tempRadius + 1/4 *var*(26-var*2)/(40);
+    } else {
+      radius = tempRadius - (var*var*var/1000)/(23-var);
+    }
     //radius = tempRadius + var*(1-var)/157;
   }
 
@@ -183,9 +187,15 @@ int main () {
   int nbPeak = 18;
 
 
+  /* l'algo couleur ne fonctionne pas */
   algoCouleur(nbPeak, floors);
-  onFaitLesTrianglesAmeliores(nbPeak, floors);
+
+  /*Le programme était entièrement paramétrable jusqu'au radius.
+  Je n'ai pas réussi à trouver une function correcte qui me permet de faire un gherkin correcte en toute circonstances.
+  Rayon à part, on peut choisir la hauteur, le nombre d'étages et le nombre de points sur le cercle formant un étage.*/
+  TrianglesAmeliores(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
-  functionOfLife(maxHeight, floors, nbPeak, 3);
+  calculCoordonnees(maxHeight, floors, nbPeak, 3);
+
   return 0;
 }
