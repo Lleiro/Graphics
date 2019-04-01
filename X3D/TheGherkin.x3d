@@ -22,6 +22,16 @@
   </Transform>
   </Transform>
 
+  <!-- 2 view point -->
+  <!-- <Transform rotation='0 1 0 0.8'>
+  <Transform rotation='0 0 1 -0.5'>
+  <Transform rotation='1 0 0 0'>
+      <Viewpoint description='viewFromUpperFrontRight'
+                 position='0 0 20'/>
+  </Transform>
+  </Transform>
+</Transform> -->
+
   <!-- 6 boxes -->
   <!--<Transform rotation="0.0 1 0 1.5708" translation="4 -2 2">
     <Group DEF="twoBranchGroup">

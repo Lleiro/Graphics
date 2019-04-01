@@ -185,6 +185,7 @@ int main () {
   int maxHeight = 24;
   int floors = 22;
   int nbPeak = 18;
+  int radius = 3;
 
 
   /* l'algo couleur ne fonctionne pas */
@@ -195,7 +196,7 @@ int main () {
   Rayon à part, on peut choisir la hauteur, le nombre d'étages et le nombre de points sur le cercle formant un étage.*/
   TrianglesAmeliores(nbPeak, floors);
   indexedFaceSet(nbPeak, floors);
-  calculCoordonnees(maxHeight, floors, nbPeak, 3);
+  calculCoordonnees(maxHeight, floors, nbPeak, radius);
 
   return 0;
 }
